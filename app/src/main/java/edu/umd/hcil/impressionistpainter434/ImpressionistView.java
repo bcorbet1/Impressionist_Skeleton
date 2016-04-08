@@ -34,7 +34,7 @@ public class ImpressionistView extends View {
     private boolean complimentaryColor = false;
 
     private int _alpha = 150;
-    private int _defaultRadius = 25;
+    private int _defaultRadius = 5;
     private Point _lastPoint = null;
     private long _lastPointTime = -1;
     private boolean _useMotionSpeedForBrushStrokeSize = true;
@@ -221,8 +221,8 @@ public class ImpressionistView extends View {
                     blue = (~blue) & 0xff;
                     green = (~green) & 0xff;
 
-                    int invertedColor = Color.argb(alpha, red, blue, green);
-                    _paint.setColor(invertedColor);
+                    int complimentaryColor = Color.argb(alpha, red, blue, green);
+                    _paint.setColor(complimentaryColor);
                 }
 
                 for (int i = 0; i < historySize; i++) {
@@ -242,8 +242,8 @@ public class ImpressionistView extends View {
 
                         int xVelocity = Math.abs((int) trackSpeed.getXVelocity(pid));
                         int yVelocity = Math.abs((int) trackSpeed.getYVelocity(pid));
-                        int finalVel = Math.max(xVelocity, yVelocity);
-                        brushRadius = getMotionBrushRadius(finalVel);
+                        int velocity = Math.max(xVelocity, yVelocity);
+                        brushRadius = getMotionBrushRadius(velocity);
 
                         _offScreenCanvas.drawCircle(touchX, touchY, brushRadius, _paint);
                     }
@@ -261,26 +261,26 @@ public class ImpressionistView extends View {
         return true;
     }
 
-    private int getMotionBrushRadius(int finalVel) {
+    private int getMotionBrushRadius(int velocity) {
         int brushRadius = _defaultRadius;
 
-        if (finalVel >= 0 && finalVel < 100)
+        if (velocity >= 0 && velocity < 100)
             brushRadius = 5;
-        if (finalVel >= 100 && finalVel < 120)
+        if (velocity >= 100 && velocity < 120)
             brushRadius = 6;
-        if (finalVel >= 120 && finalVel < 150)
+        if (velocity >= 120 && velocity < 150)
             brushRadius = 10;
-        if (finalVel >= 150 && finalVel < 180)
+        if (velocity >= 150 && velocity < 180)
             brushRadius = 12;
-        if (finalVel >= 180 && finalVel < 220)
+        if (velocity >= 180 && velocity < 220)
             brushRadius = 15;
-        if (finalVel >= 220 && finalVel < 250)
+        if (velocity >= 220 && velocity < 250)
             brushRadius = 20;
-        if (finalVel >= 250 && finalVel < 300)
+        if (velocity >= 250 && velocity < 300)
             brushRadius = 25;
-        if (finalVel >= 300 && finalVel < 330)
+        if (velocity >= 300 && velocity < 330)
             brushRadius = 30;
-        if (finalVel >= 330)
+        if (velocity >= 330)
             brushRadius = 40;
 
         return brushRadius;
