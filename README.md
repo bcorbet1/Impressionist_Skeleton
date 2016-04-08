@@ -11,5 +11,6 @@
 # This project was built with the help of the Skeleton Code on the CMSC434 Class Webpage
   
 # CMSC 434 Android 2 Assignment:http://cmsc434-s16.wikispaces.com/IA08+Android+2
+# Complimentary Colors Tutorial: http://www.java2s.com/Code/Android/2D-Graphics/Returnsthecomplimentaryoppositecolor.htm
   
   
