@@ -34,7 +34,7 @@ public class ImpressionistView extends View {
     private boolean complimentaryColor = false;
 
     private int _alpha = 150;
-    private int _defaultRadius = 5;
+    private int _defaultRadius = 15;
     private Point _lastPoint = null;
     private long _lastPointTime = -1;
     private boolean _useMotionSpeedForBrushStrokeSize = true;
