@@ -107,9 +107,9 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
                 return true;
             case R.id.menuComplimentaryColor:
                 if (_impressionistView.getComplimentaryColor())
-                    Toast.makeText(this, "Color back to normal", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Normal Color", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(this, "Color now inverted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Complimentary Color", Toast.LENGTH_SHORT).show();
 
                 _impressionistView.ComplimentaryColor();
                 return true;
@@ -192,7 +192,6 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
 
         saveDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                //save drawing
                 _impressionistView.setDrawingCacheEnabled(true);
                 Bitmap drawingBitmap = _impressionistView.get_offScreenBitmap();
 

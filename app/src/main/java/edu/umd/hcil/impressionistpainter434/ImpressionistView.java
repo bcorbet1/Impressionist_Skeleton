@@ -195,13 +195,10 @@ public class ImpressionistView extends View {
         switch(motionEvent.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 if (trackSpeed == null) {
-                    // Retrieve a new VelocityTracker object to watch the velocity of a motion.
                     trackSpeed = VelocityTracker.obtain();
                 } else {
-                    // Reset the velocity tracker back to its initial state.
                     trackSpeed.clear();
                 }
-                // Add a user's movement to the tracker.
                 trackSpeed.addMovement(motionEvent);
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -209,14 +206,12 @@ public class ImpressionistView extends View {
                 _paint.setColor(pixel);
                 _paint.setStrokeWidth(brushRadius);
 
-                // if color inversion is set to true, then get the complimentary colors
                 if (complimentaryColor) {
                     int alpha = Color.alpha(pixel);
                     int red = Color.red(pixel);
                     int blue = Color.blue(pixel);
                     int green = Color.green(pixel);
 
-                    // find compliments
                     red = (~red) & 0xff;
                     blue = (~blue) & 0xff;
                     green = (~green) & 0xff;
