@@ -1,6 +1,6 @@
 # Impressionist_Skeleton
 
-#This is my Impressionist Painter App. The features that this app has include:
+#This is my Impressionist Painter App. This app was created and ran using Android Studio. My phone and the emulator served as my devices to test the app.  The features that this app has include:
 # Circle, Square, Line Brush Types
 # Brush Type that is set dynamically by the speed of the finger
 # Load images from your gallery
