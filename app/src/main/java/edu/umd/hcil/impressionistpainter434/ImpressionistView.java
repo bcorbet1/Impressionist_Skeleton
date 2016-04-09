@@ -113,6 +113,7 @@ public class ImpressionistView extends View {
     }
 
     public boolean getComplimentaryColor() {
+
         return complimentaryColor;
     }
 
@@ -127,6 +128,7 @@ public class ImpressionistView extends View {
     }
 
     public Bitmap get_offScreenBitmap() {
+
         return _offScreenBitmap;
     }
 
