@@ -225,12 +225,15 @@ public class ImpressionistView extends View {
                     float touchX = motionEvent.getHistoricalX(i);
                     float touchY = motionEvent.getHistoricalY(i);
 
-                    if (_brushType == _brushType.Square)
+                    if (_brushType == _brushType.Square) {
                         _offScreenCanvas.drawRect(touchX, touchY, touchX + brushRadius, touchY + brushRadius, _paint);
-                    if (_brushType == _brushType.Circle)
+                    }
+                    if (_brushType == _brushType.Circle) {
                         _offScreenCanvas.drawCircle(touchX, touchY, brushRadius, _paint);
-                    if (_brushType == _brushType.Line)
-                        _offScreenCanvas.drawLine(touchX,touchY,touchX + brushRadius, touchY + brushRadius, _paint);
+                    }
+                    if (_brushType == _brushType.Line) {
+                        _offScreenCanvas.drawLine(touchX, touchY, touchX + brushRadius, touchY + brushRadius, _paint);
+                    }
                     if (_brushType == _brushType.SpeedBrush) {
                         trackSpeed.addMovement(motionEvent);
                         trackSpeed.computeCurrentVelocity(1000);
